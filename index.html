@@ -1342,7 +1342,7 @@
                             Sort by Score (High to Low)
                         </button>
                         <button class="sort-btn" id="sort-params-btn" onclick="sortByParameters()">
-                            Sort by Parameters (Large to Small)
+                            Sort by Parameters (Small to Large)
                         </button>
                         <button class="sort-btn" id="sort-index-btn" onclick="sortByIndex()">
                             Sort by Index
@@ -3270,7 +3270,7 @@
                     filteredNetworks.sort((a, b) => {
                         const paramsA = parseParameterCount(a.parameters);
                         const paramsB = parseParameterCount(b.parameters);
-                        return paramsB - paramsA; // Large to small
+                        return paramsA - paramsB; // Small to large
                     });
                     break;
                 case 'index':
