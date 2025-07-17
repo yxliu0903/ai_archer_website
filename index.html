@@ -1758,10 +1758,10 @@
         // Create enhanced training data with deltanet and gated deltanet comparison
         function createEnhancedTrainingData(originalTrainData, modelName) {
             // deltanet loss data (extracted from log file, starting from step 600)
-            const deltanetLosses = [6.2249, 6.0558, 5.8544, 5.7071, 5.5044, 5.3517, 5.2153, 5.1558, 4.9783, 4.9156, 4.9054, 4.7193, 4.6739, 4.6408, 4.5787];
+            const deltanetLosses = [4.8421, 4.5947, 4.3772, 4.2155, 4.0338, 3.9330, 3.8148, 3.7576, 3.7160, 3.6412, 3.5928, 3.5765, 3.5381, 3.4951, 3.5055];
 
             // gated deltanet loss data (extracted from log file, starting from step 600)
-            const gatedDeltanetLosses = [5.8960, 5.7123, 5.5010, 5.3310, 5.1518, 5.0055, 4.8970, 4.8639, 4.6856, 4.6380, 4.6444, 4.4774, 4.4493, 4.4186, 4.3772];
+            const gatedDeltanetLosses = [4.5393, 4.3642, 4.2144, 4.0949, 3.9439, 3.8624, 3.7586, 3.7010, 3.6672, 3.6003, 3.5528, 3.5397, 3.5045, 3.4690, 3.4768];
 
             // If no original training data, return original structure with comparison rows
             if (!originalTrainData || !originalTrainData.rows || originalTrainData.rows.length === 0) {
