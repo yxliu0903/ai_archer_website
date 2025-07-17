@@ -12,7 +12,8 @@
     "parent": 1544,
     "name_new": "HybridGateFlow",
     "summary": "HybridGateFlow combines hierarchical hybrid gating with rich statistical features and progressive temperature untying to optimize token-specific routing for robust extraction, global reasoning, and adaptive specialisation in sub-quadratic causal architectures.",
-    "parameters": "495.73M"
+    "parameters": "495.73M",
+    "score": 2.284679125222743
   },
   {
     "name": "delta_net_len_hgate_mixanneal",
@@ -27,7 +28,8 @@
     "parent": 1385,
     "name_new": "TempMixAnnealRouter",
     "summary": "Introduces dynamic temperature annealing for sharp, diversified head routing and persistent cross-head mixing floors to enhance symbolic reasoning and distributed evidence aggregation without increasing complexity.",
-    "parameters": "817.01M"
+    "parameters": "817.01M",
+    "score": 2.665358631933711
   },
   {
     "name": "delta_net_rmsgm",
@@ -42,7 +44,8 @@
     "parent": 364,
     "name_new": "TriScale-GatedFusion",
     "summary": "A triple-scale gated memory model with feedback-aware fusion that dynamically balances local and global reasoning using causal filters and robust path activation guarantees.",
-    "parameters": "466.61M"
+    "parameters": "466.61M",
+    "score": 2.293324343370674
   },
   {
     "name": "delta_net_hrem",
@@ -57,7 +60,8 @@
     "parent": 556,
     "name_new": "HyperRouteFusion",
     "summary": "A hierarchically-routed multi-path architecture with adaptive entropy control and rich contextual features, designed for efficient and dynamic memory fusion across diverse reasoning and extraction tasks.",
-    "parameters": "474.88M"
+    "parameters": "474.88M",
+    "score": 2.3413729942962855
   },
   {
     "name": "delta_net_entropy_floor",
@@ -72,7 +76,8 @@
     "parent": 730,
     "name_new": "EntropyEnhancedMultiScaleGateNet",
     "summary": "Introduces persistent entropy-based diversity enforcement, multi-scale memory with a mid-range kernel, and content-aware gating for improved path utilization, span reasoning, and stable optimization.",
-    "parameters": "464.54M"
+    "parameters": "464.54M",
+    "score": 2.420659525444392
   },
   {
     "name": "delta_net_mor",
@@ -87,7 +92,8 @@
     "parent": 364,
     "name_new": "OutputAwareMultiScaleRouter",
     "summary": "Incorporates output-aware softmax routing with multi-scale depth-wise convolutions to balance local precision and long-range reasoning, ensuring efficient and dynamic pathway allocation while preserving strict causality and sub-quadratic complexity.",
-    "parameters": "464.64M"
+    "parameters": "464.64M",
+    "score": 2.326165951110931
   },
   {
     "name": "delta_net_dlgm",
@@ -102,7 +108,8 @@
     "parent": 364,
     "name_new": "DualScaleMemoryRouter",
     "summary": "A dual-scale causal memory model combining short- and mid-range convolutional branches with adaptive token-wise routing to enhance local precision and global reasoning within O(N) complexity.",
-    "parameters": "464.64M"
+    "parameters": "464.64M",
+    "score": 2.456424684544288
   },
   {
     "name": "delta_net_omsgf",
@@ -117,7 +124,8 @@
     "parent": 908,
     "name_new": "FusionGate-MS",
     "summary": "FusionGate-MS combines output-aware gated fusion with per-path statistical summaries, multi-scale FIR paths, softplus temperature modulation, and entropy regularization for robust and efficient token routing across diverse NLP tasks.",
-    "parameters": "443.87M"
+    "parameters": "443.87M",
+    "score": 2.3619759835083416
   },
   {
     "name": "delta_net_cpaghr",
@@ -132,7 +140,8 @@
     "parent": 1544,
     "name_new": "AdaptiveGatedRouter-Hybrid",
     "summary": "An advanced adaptive gating model with nonlinear content-positional fusion, progressive per-head specialization, entropy-driven routing dynamics, and integrated local residuals for optimized extraction and extended reasoning efficiency.",
-    "parameters": "446.13M"
+    "parameters": "446.13M",
+    "score": 2.56705678765428
   },
   {
     "name": "delta_net_cagf_dpaf_eash",
@@ -147,7 +156,8 @@
     "parent": 671,
     "name_new": "FusionGate-CAGT",
     "summary": "FusionGate-CAGT integrates context-conditioned adaptive gating, dual-phase path floor, entropy-annealed regularization, and per-head learnable temperatures to achieve efficient, robust, and task-sensitive feature specialization in O(N) complexity.",
-    "parameters": "444.54M"
+    "parameters": "444.54M",
+    "score": 2.3529653763754217
   },
   {
     "name": "delta_net_aft",
@@ -162,7 +172,8 @@
     "parent": 580,
     "name_new": "AdaptiveFusionNet",
     "summary": "AdaptiveFusionNet introduces token-specific context floors and per-head learnable temperatures, enabling balanced improvements in copy fidelity and context-rich reasoning tasks while maintaining efficient causality and compatibility.",
-    "parameters": "615.54M"
+    "parameters": "615.54M",
+    "score": 2.66186479295906
   },
   {
     "name": "delta_net_mshmfv2",
@@ -177,7 +188,8 @@
     "parent": 433,
     "name_new": "FusionGateNet_v3",
     "summary": "Enhances ultra-local precision with a k=3 FIR kernel, richer fusion statistics including variance, and learnable per-head temperature scaling for dynamic branch selection while preserving O(L) complexity and backward compatibility.",
-    "parameters": "490.52M"
+    "parameters": "490.52M",
+    "score": 2.394496637016628
   },
   {
     "name": "delta_net_afef",
@@ -192,7 +204,8 @@
     "parent": 1329,
     "name_new": "AdaptiveEntropyRouter",
     "summary": "Incorporates per-head adaptive floor gating with learnable path diversity and cosine-annealed entropy regularization to enhance task-specific routing while preventing premature collapse or over-regularization.",
-    "parameters": "468.48M"
+    "parameters": "468.48M",
+    "score": 2.661178530417397
   },
   {
     "name": "delta_net_dfpcr",
@@ -207,7 +220,8 @@
     "parent": 370,
     "name_new": "PathAwareMemoryRouter",
     "summary": "A dual-feedback, path-conditioned architecture with adaptive multi-scale routing that balances global context, local precision, and efficient memory utilization for sub-quadratic, causal reasoning tasks.",
-    "parameters": "471.08M"
+    "parameters": "471.08M",
+    "score": 2.605700022587898
   },
   {
     "name": "delta_net_afrc",
@@ -222,7 +236,8 @@
     "parent": 730,
     "name_new": "AdaptiveFusionRNet",
     "summary": "Integrates learnable adaptive context floors, enriched context statistics, and a very-long FIR branch with hierarchical gating for balanced local-global reasoning and efficient causal performance.",
-    "parameters": "472.41M"
+    "parameters": "472.41M",
+    "score": 2.453375067392879
   },
   {
     "name": "delta_net_hafmg",
@@ -237,7 +252,8 @@
     "parent": 1367,
     "name_new": "HierarchiMix-Gate",
     "summary": "A robust two-stage gating model with adaptive context floors, entropy-regularized routing, and token-aware specialization for balanced copy-context reasoning across diverse tasks.",
-    "parameters": "469.26M"
+    "parameters": "469.26M",
+    "score": 2.228501134740074
   },
   {
     "name": "delta_net_afbt",
@@ -252,7 +268,8 @@
     "parent": 908,
     "name_new": "BoundedTempAnnealNet",
     "summary": "Integrates bounded-temperature gating, adaptive floor annealing, and optional entropy regularization to stabilize contextual routing and improve span-based and copy-dominated tasks.",
-    "parameters": "615.54M"
+    "parameters": "615.54M",
+    "score": 2.526950010564208
   },
   {
     "name": "delta_net_htfr",
@@ -267,7 +284,8 @@
     "parent": 471,
     "name_new": "GateDivergeTransformer",
     "summary": "A hierarchical gating model with per-head temperature control, ε-floors, and entropy regularisation to ensure balanced path utilisation, improved task diversity, and sub-quadratic complexity.",
-    "parameters": "817.77M"
+    "parameters": "817.77M",
+    "score": 2.6161594772234698
   },
   {
     "name": "delta_net_taigr_xs",
@@ -282,7 +300,8 @@
     "parent": 1598,
     "name_new": "AdaptiveGateRouter_X",
     "summary": "A token-adaptive, hierarchical model combining gated identity paths, multi-context routing, and annealing mechanisms for balanced extraction and reasoning across diverse tasks.",
-    "parameters": "477.57M"
+    "parameters": "477.57M",
+    "score": 2.449551001013843
   },
   {
     "name": "delta_net_headgated",
@@ -297,7 +316,8 @@
     "parent": 1000,
     "name_new": "GatedFusionTransformer",
     "summary": "Incorporates Head-Specific Output Gating (HSOG) and relaxed residual bias to enhance token-level local control and early learning while preserving global reasoning and efficient O(N) complexity.",
-    "parameters": "439.52M"
+    "parameters": "439.52M",
+    "score": 2.6026287824803895
   },
   {
     "name": "delta_net_hybrid_floor_gt",
@@ -312,7 +332,8 @@
     "parent": 682,
     "name_new": "FusionLogicNet",
     "summary": "FusionLogicNet combines group-wise temperature sharing, hybrid static-dynamic residuals, and auto-annealed entropy-KL regularization to enhance local reasoning, task adaptability, and training stability with minimal computational overhead.",
-    "parameters": "442.57M"
+    "parameters": "442.57M",
+    "score": 2.373162631669906
   },
   {
     "name": "delta_net_phfg",
@@ -327,7 +348,8 @@
     "parent": 497,
     "name_new": "ParallelFusionTransformer",
     "summary": "Combines parallel global-local routing via sigmoid-based gates, ε-floor stabilization, and lightweight head-specific features to optimize multi-scale reasoning without zero-sum trade-offs.",
-    "parameters": "466.51M"
+    "parameters": "466.51M",
+    "score": 2.316147996373851
   },
   {
     "name": "delta_net_mscmix_pointwise",
@@ -342,7 +364,8 @@
     "parent": 417,
     "name_new": "DepthwiseConvPointMixer",
     "summary": "Combines multi-scale depth-wise convolutions with a lightweight 1×1 point-wise mixer to enhance cross-channel interactions and narrative reasoning tasks while maintaining computational efficiency and causality.",
-    "parameters": "492.04M"
+    "parameters": "492.04M",
+    "score": 2.2916164348532915
   },
   {
     "name": "delta_net_ms_gstat3_quota",
@@ -357,7 +380,8 @@
     "parent": 556,
     "name_new": "QuotaGatedStatNet",
     "summary": "Enforces a minimum quota for long-memory paths within a statistic-aware softmax gating mechanism, preserving global reasoning while optimizing local context comprehension and maintaining computational efficiency.",
-    "parameters": "464.64M"
+    "parameters": "464.64M",
+    "score": 2.3365125647324017
   },
   {
     "name": "delta_net_qsr",
@@ -372,7 +396,8 @@
     "parent": 1367,
     "name_new": "StreamAwareRouter",
     "summary": "StreamAwareRouter introduces a parameter-efficient Query-and-Summary gating mechanism that replaces tensor flattening with channel-wise summaries and lightweight projections, enabling scalable, content-aware fusion with sub-quadratic complexity.",
-    "parameters": "415.99M"
+    "parameters": "415.99M",
+    "score": 2.6270171522190497
   },
   {
     "name": "delta_net_afp",
@@ -387,7 +412,8 @@
     "parent": 471,
     "name_new": "AdaptiveGateNet-AFP",
     "summary": "AdaptiveGateNet-AFP integrates per-head linear gating, learnable adaptive floors, and per-path temperature tuning to enhance routing specialization, dynamic entropy control, and training stability with minimal computational overhead.",
-    "parameters": "415.42M"
+    "parameters": "415.42M",
+    "score": 2.528344499973813
   },
   {
     "name": "delta_net_aegf_br",
@@ -402,7 +428,8 @@
     "parent": 965,
     "name_new": "FusionGateBR",
     "summary": "Combines annealed entropy-regularised gating with balanced residual injection to enhance early exploration, late-stage global reasoning, and variance control without increasing computational complexity.",
-    "parameters": "439.13M"
+    "parameters": "439.13M",
+    "score": 2.6608499949440394
   },
   {
     "name": "delta_net_csm",
@@ -417,7 +444,8 @@
     "parent": 649,
     "name_new": "ContentSharpRouter",
     "summary": "Fuses content-aware gating with per-head adaptive temperature for precise token routing, featuring lightweight O(N) operations and entropy regularization to balance soft and hard decision paths.",
-    "parameters": "425.44M"
+    "parameters": "425.44M",
+    "score": 2.4922768127046893
   },
   {
     "name": "delta_net_aggf_v2",
@@ -432,7 +460,8 @@
     "parent": 565,
     "name_new": "FusionGate AdaptiveNet",
     "summary": "This architecture leverages hierarchical adaptive gating, dynamic bias decay, specialized global-path preservation, and per-head temperature optimization to balance early convergence and contextual specialization in reasoning and comprehension tasks.",
-    "parameters": "439.13M"
+    "parameters": "439.13M",
+    "score": 2.22623399465556
   },
   {
     "name": "delta_net_hdsr",
@@ -447,7 +476,8 @@
     "parent": 965,
     "name_new": "HybridCausalRouter",
     "summary": "This model integrates identity-preserving residuals, head-aware adaptive routing, and entropy-annealed gating with fully causal, sub-quadratic processing to achieve robust task performance across extraction, coreference, and narrative reasoning.",
-    "parameters": "466.93M"
+    "parameters": "466.93M",
+    "score": 2.4518326847934553
   },
   {
     "name": "delta_net_cagf",
@@ -462,7 +492,8 @@
     "parent": 471,
     "name_new": "FusionGate-X",
     "summary": "FusionGate-X combines content-aware per-head gating with path-specific bias and adaptive temperature to enhance specialised routing and long-range reasoning, while preserving efficient multi-task processing and O(N) complexity.",
-    "parameters": "439.13M"
+    "parameters": "439.13M",
+    "score": 2.6544648642137623
   },
   {
     "name": "delta_net_cagf_rc_pf_hybrid",
@@ -477,7 +508,8 @@
     "parent": 497,
     "name_new": "HybridFlowNet",
     "summary": "Integrates hybrid residual scaling with guaranteed signal flow and enhanced gradient robustness, optimizing ultra-local reasoning tasks while maintaining global complexity efficiency.",
-    "parameters": "439.03M"
+    "parameters": "439.03M",
+    "score": 2.5259112497116387
   },
   {
     "name": "delta_net_tareia",
@@ -492,7 +524,8 @@
     "parent": 979,
     "name_new": "AdaptiveTokenRouter",
     "summary": "Introduces token-specific uncertainty-scaled ε-floors to optimize routing precision and exploration, enhancing performance on both confident and ambiguous tasks without altering complexity or compatibility.",
-    "parameters": "640.70M"
+    "parameters": "640.70M",
+    "score": 2.6819815530699818
   },
   {
     "name": "delta_net_aefg_hr",
@@ -507,7 +540,8 @@
     "parent": 965,
     "name_new": "AdaptiveHybridGateNet",
     "summary": "Combines entropy-annealed gating and hybrid residual scaling to achieve early diversity, late-stage specialisation, and robust local information flow for improved routing and reasoning tasks.",
-    "parameters": "491.04M"
+    "parameters": "491.04M",
+    "score": 2.301352842470828
   },
   {
     "name": "delta_net_hafs",
@@ -522,7 +556,8 @@
     "parent": 864,
     "name_new": "AdaptiveFloorNet-HAF",
     "summary": "A head-adaptive model combining annealed routing floors, per-head temperature scaling, residual safeguards, and entropy regularisation to achieve stable, batch-agnostic gating with preserved local capacity and sharp exclusive selection.",
-    "parameters": "464.22M"
+    "parameters": "464.22M",
+    "score": 2.2672896888828653
   },
   {
     "name": "delta_net_syngf",
@@ -537,7 +572,8 @@
     "parent": 908,
     "name_new": "SynerFuse-LGX",
     "summary": "A unified layer combining adaptive residuals, bounded temperature, and statistical gating to preserve local detail while enhancing global reasoning across diverse benchmarks.",
-    "parameters": "439.13M"
+    "parameters": "439.13M",
+    "score": 2.6338094871733717
   },
   {
     "name": "delta_net_rggf",
@@ -552,7 +588,8 @@
     "parent": 565,
     "name_new": "ResiFuse-CausalGater",
     "summary": "A robust causal architecture combining fixed residual guarantees, dynamic per-head gated fusion, and learnable temperature scaling for adaptive, efficient context-sensitive reasoning.",
-    "parameters": "439.13M"
+    "parameters": "439.13M",
+    "score": 2.1384472997755024
   },
   {
     "name": "delta_net_gtmlp",
@@ -567,7 +604,8 @@
     "parent": 682,
     "name_new": "GroupTempMLP",
     "summary": "GroupTempMLP enhances conditional routing by introducing group-wise learnable temperature scaling and a rich per-head two-layer MLP gate, achieving sharper, balanced specialisation with minimal parameter overhead.",
-    "parameters": "426.49M"
+    "parameters": "426.49M",
+    "score": 2.4492368483966525
   },
   {
     "name": "delta_net_udmag",
@@ -582,7 +620,8 @@
     "parent": 965,
     "name_new": "DynMemGate",
     "summary": "DynMemGate integrates adaptive memory decay, output-aware gating, annealed routing, and corrected entropy regularization to enhance passage-QA, commonsense reasoning, and extraction fidelity while maintaining sub-quadratic efficiency.",
-    "parameters": "492.71M"
+    "parameters": "492.71M",
+    "score": 2.42881121499735
   },
   {
     "name": "delta_net_adaptive_hier_gate",
@@ -597,7 +636,8 @@
     "parent": 560,
     "name_new": "AdaptiveSpanGateConv",
     "summary": "Combines learnable adaptive ε-floor gating, per-head temperature modulation, identity-initialised multi-scale convolutions, and real-time output-aware features to enhance precision, locality, and training stability for span and global reasoning tasks.",
-    "parameters": "467.86M"
+    "parameters": "467.86M",
+    "score": 2.167412981375801
   },
   {
     "name": "delta_net_psafg",
@@ -612,7 +652,8 @@
     "parent": 560,
     "name_new": "FusionBalanceTransformer",
     "summary": "Combines normalized additive fusion with identity-inclusive FIR pyramids and output-aware gating to achieve stable activation scales and enhanced multi-path reasoning for diverse token extraction tasks.",
-    "parameters": "469.04M"
+    "parameters": "469.04M",
+    "score": 2.618409397137569
   },
   {
     "name": "delta_net_gae_ms3e",
@@ -627,7 +668,8 @@
     "parent": 586,
     "name_new": "FusionGate-MS3E-Hybrid",
     "summary": "A head-specialized, multi-statistic adaptive gating model with entropy regularization, dual-scale decorrelated memory, and universal design for efficient reasoning and contextual fusion tasks.",
-    "parameters": "431.49M"
+    "parameters": "431.49M",
+    "score": 2.3029762200462924
   },
   {
     "name": "delta_net_ms_hsm_tempgate",
@@ -642,7 +684,8 @@
     "parent": 417,
     "name_new": "FusionGateMemoryNet",
     "summary": "A causal sub-quadratic model combining multi-scale depth-wise convolutions with channel mixing, hierarchical memory pooling, and adaptive temperature-controlled gating for precise local-global reasoning.",
-    "parameters": "466.31M"
+    "parameters": "466.31M",
+    "score": 2.376724929287736
   },
   {
     "name": "delta_net_tapr",
@@ -657,7 +700,8 @@
     "parent": 1370,
     "name_new": "TokenPruneRouter",
     "summary": "A token-adaptive routing model with progressive pruning and entropy annealing, combining early exploration with leakage-free, high-precision hard gating for improved extraction and QA tasks.",
-    "parameters": "640.70M"
+    "parameters": "640.70M",
+    "score": 2.6833294447964375
   },
   {
     "name": "delta_net_cagf_mf",
@@ -672,7 +716,8 @@
     "parent": 671,
     "name_new": "ConvexBlendFloorNet",
     "summary": "Introduces a fixed probability floor for gradient flow preservation, convex mixture balance, and improved local-global reasoning without increasing output variance or diminishing path utilization during training.",
-    "parameters": "439.13M"
+    "parameters": "439.13M",
+    "score": 2.496961368803032
   },
   {
     "name": "delta_net_mfg",
@@ -687,7 +732,8 @@
     "parent": 497,
     "name_new": "MinFloorRouter",
     "summary": "Incorporates a hard-coded probability floor and adaptive gating to prevent path collapse, ensuring consistent gradient flow while preserving sharp routing and scalability.",
-    "parameters": "439.13M"
+    "parameters": "439.13M",
+    "score": 2.4249056537158906
   },
   {
     "name": "delta_net_psfr",
@@ -702,7 +748,8 @@
     "parent": 565,
     "name_new": "FusionGatedFIRNet",
     "summary": "A parallel sigmoid-gated architecture combining adaptive per-head retention, long/short FIR paths, and content-aware routing to optimize both local-span and global reasoning tasks without competitive trade-offs.",
-    "parameters": "466.90M"
+    "parameters": "466.90M",
+    "score": 2.5516100409835394
   },
   {
     "name": "delta_net_aft_dsi",
@@ -717,7 +764,8 @@
     "parent": 965,
     "name_new": "AdaptiveFusionNet-DSI",
     "summary": "A token-adaptive architecture with dynamic routing floors, per-head softplus-bounded alpha regularization, and scheduled exploration-specialization, designed for efficient O(N) causal processing and balanced context-to-copy routing.",
-    "parameters": "466.51M"
+    "parameters": "466.51M",
+    "score": 2.2819740843138696
   },
   {
     "name": "delta_net_ms_hsm_widefloor",
@@ -732,7 +780,8 @@
     "parent": 522,
     "name_new": "ConvFusionWide31",
     "summary": "Enhanced multi-scale depthwise convolution with k=31 and ε-floor protected fusion ensures precise mid-range locality and robust gradient flow for span tasks.",
-    "parameters": "468.25M"
+    "parameters": "468.25M",
+    "score": 2.5187692681335485
   },
   {
     "name": "delta_net_dynfuse",
@@ -747,7 +796,8 @@
     "parent": 565,
     "name_new": "DynFuseFlexGate",
     "summary": "DynFuseFlexGate resolves the global-local trade-off by using an adaptive decaying floor, residual bypass, and entropy regularization to balance gradient flow, path specialization, and diverse gating dynamics.",
-    "parameters": "439.13M"
+    "parameters": "439.13M",
+    "score": 2.656655809583106
   },
   {
     "name": "delta_net_tarf",
@@ -762,7 +812,8 @@
     "parent": 965,
     "name_new": "TokenScaleRouter",
     "summary": "A token-adaptive model with multi-scale FIR branches, output-aware routing, and bounded context mixing for efficient and robust reasoning across diverse tasks.",
-    "parameters": "717.33M"
+    "parameters": "717.33M",
+    "score": 2.487617533557514
   },
   {
     "name": "delta_net_abrgf",
@@ -777,7 +828,8 @@
     "parent": 565,
     "name_new": "AdaptiveFusionNet",
     "summary": "A robust model with Dirac-initialized FIR kernels, trainable path-specific biases, lightweight residual bypasses, and logit-dropout regularization, achieving balanced long-range and local reasoning performance with improved gradient flow and task adaptability.",
-    "parameters": "438.96M"
+    "parameters": "438.96M",
+    "score": 2.476446331327402
   },
   {
     "name": "delta_net_mafr",
@@ -792,7 +844,8 @@
     "parent": 1329,
     "name_new": "HyenaMAFR",
     "summary": "HyenaMAFR integrates multi-scale adaptive floor parameters, depth-wise convolutions, and per-head residual gating to enhance lexical retention, coherence reasoning, and efficient global routing.",
-    "parameters": "440.08M"
+    "parameters": "440.08M",
+    "score": 2.618924998893387
   },
   {
     "name": "delta_net_dmshf",
@@ -807,7 +860,8 @@
     "parent": 497,
     "name_new": "FusionGATE-HMSR",
     "summary": "A dynamic hybrid architecture combining hierarchical-statistical gating, adaptive regularization, and schedule-aware bias to enable scalable, context-sensitive, and compositional information routing for diverse reasoning tasks.",
-    "parameters": "473.19M"
+    "parameters": "473.19M",
+    "score": 2.3497498655295423
   },
   {
     "name": "delta_net_ms_adaptive_gstat3",
@@ -822,7 +876,8 @@
     "parent": 434,
     "name_new": "FusionGate-MS3",
     "summary": "FusionGate-MS3 integrates enhanced multi-statistical gating with diversity regularization and hybrid bias initialization to optimize context-aware reasoning, path diversity, and memory-local feature prioritization in scalable architectures.",
-    "parameters": "464.65M"
+    "parameters": "464.65M",
+    "score": 2.45899850773206
   },
   {
     "name": "delta_net_ahm_gate",
@@ -837,7 +892,8 @@
     "parent": 965,
     "name_new": "AdaptiveMixGateNet",
     "summary": "An architecture integrating per-head adaptive mixing, confidence-driven suppression, and stage-selective temperature annealing to balance precision in factual extraction with narrative-contextual reasoning.",
-    "parameters": "439.13M"
+    "parameters": "439.13M",
+    "score": 2.2209000262833394
   },
   {
     "name": "delta_net_oahmgr",
@@ -852,7 +908,8 @@
     "parent": 671,
     "name_new": "FusionGateX",
     "summary": "FusionGateX integrates output-aware gating, learnable epsilon floors, hybrid residuals, and dynamic temperature control to enable robust, context-rich reasoning and efficient path selection across diverse tasks.",
-    "parameters": "439.72M"
+    "parameters": "439.72M",
+    "score": 2.541570423214886
   },
   {
     "name": "delta_net_msdfdm",
@@ -867,7 +924,8 @@
     "parent": 364,
     "name_new": "DualFIR-QuadFusion",
     "summary": "This model integrates dual causal FIR branches for local and mid-range patterns with a quad-path adaptive fusion mechanism, ensuring sharp token-level precision, smooth context handling, and efficient linear scalability.",
-    "parameters": "465.45M"
+    "parameters": "465.45M",
+    "score": 2.3831632718929363
   },
   {
     "name": "delta_net_cagf_rc_pf",
@@ -882,7 +940,8 @@
     "parent": 671,
     "name_new": "FusionGateX",
     "summary": "FusionGateX combines ε-floor softmax for stable variance-controlled path fusion with dynamic residual gating to adaptively balance local and global context processing, enhancing performance across diverse tasks.",
-    "parameters": "439.33M"
+    "parameters": "439.33M",
+    "score": 2.7053433573239127
   },
   {
     "name": "delta_net_aeoc",
@@ -897,7 +956,8 @@
     "parent": 649,
     "name_new": "AdaptiveEntropyRouterNet",
     "summary": "Integrates output-conditioned gating with multi-scale convolutional branches and entropy-based regularization to ensure robust multi-path evidence aggregation and balanced performance across extractive and reasoning tasks.",
-    "parameters": "491.82M"
+    "parameters": "491.82M",
+    "score": 2.32705498166846
   },
   {
     "name": "delta_net_pathgated",
@@ -912,7 +972,8 @@
     "parent": 965,
     "name_new": "PathGatedFusionNet",
     "summary": "Incorporating path-aware gating with fused-output context and expanded signal amplification, this model dynamically balances global and local reasoning for improved accuracy across diverse tasks.",
-    "parameters": "452.03M"
+    "parameters": "452.03M",
+    "score": 2.4962688369676385
   },
   {
     "name": "delta_net_hgm_ident",
@@ -927,7 +988,8 @@
     "parent": 1544,
     "name_new": "FusionGate-HierarchicalRouter",
     "summary": "A sub-quadratic architecture combining multi-scale hierarchical gating, adaptive identity routing, and context-driven path blending for superior reasoning, extraction, and abstraction across diverse tasks.",
-    "parameters": "471.11M"
+    "parameters": "471.11M",
+    "score": 2.4893774503373605
   },
   {
     "name": "delta_net_hpaf",
@@ -942,7 +1004,8 @@
     "parent": 864,
     "name_new": "DualScaleStatFusionNet",
     "summary": "Combining dual-scale FIR branches, adaptive per-head feature statistics, and cross-head mixing, this model achieves robust global-local context reasoning with efficient, causal, and scalable architecture design.",
-    "parameters": "471.71M"
+    "parameters": "471.71M",
+    "score": 2.3205139694978674
   },
   {
     "name": "delta_net_adgr",
@@ -957,7 +1020,8 @@
     "parent": 1000,
     "name_new": "AdaptivePathRouter",
     "summary": "A dynamic routing model leveraging trainable per-head bias, KL diversity regularization, and bounded path contributions to enhance gate diversity, mitigate collapse, and optimize local-global tradeoffs efficiently.",
-    "parameters": "418.93M"
+    "parameters": "418.93M",
+    "score": 2.471467814300116
   },
   {
     "name": "delta_net_aif",
@@ -972,7 +1036,8 @@
     "parent": 497,
     "name_new": "AdaptiveFusionNet",
     "summary": "Combines token-aware adaptive identity gating with content-position fusion routing to balance copy fidelity and extraction precision across diverse reasoning tasks.",
-    "parameters": "466.71M"
+    "parameters": "466.71M",
+    "score": 2.561936979447291
   },
   {
     "name": "delta_net_hybfloor",
@@ -987,7 +1052,8 @@
     "parent": 865,
     "name_new": "HybridFusionFloor",
     "summary": "HybridFusionFloor combines constant hybrid floor allocation, per-head adaptive temperatures, parallel residual identity paths, and shared-context statistics to optimize local-global trade-offs while preserving token fidelity and reasoning diversity in O(N) efficiency.",
-    "parameters": "464.69M"
+    "parameters": "464.69M",
+    "score": 2.5159054598618904
   },
   {
     "name": "delta_net_entropy_kl_floor_gate",
@@ -1002,7 +1068,8 @@
     "parent": 471,
     "name_new": "EntropyKLAdaptiveGateNet",
     "summary": "A neural architecture combining entropy and KL-regularized gating, adaptive floor mechanisms, and monotonic memory decay for robust path diversity, stable long-horizon memory, and balanced sequence reasoning.",
-    "parameters": "471.62M"
+    "parameters": "471.62M",
+    "score": 2.5993331526427728
   },
   {
     "name": "delta_net_amf_routing",
@@ -1017,7 +1084,8 @@
     "parent": 560,
     "name_new": "FusionGate-XR",
     "summary": "FusionGate-XR leverages adaptive multi-scale memory, dynamic per-path gating, entropy regularization, and learnable path floors to achieve efficient, context-sensitive sequence modeling with robust local-global fusion and sustained path diversity.",
-    "parameters": "469.04M"
+    "parameters": "469.04M",
+    "score": 2.0675334316269405
   },
   {
     "name": "delta_net_bscgf",
@@ -1032,7 +1100,8 @@
     "parent": 580,
     "name_new": "BlockStateFusionNet",
     "summary": "A context-aware multi-scale memory model leveraging Block-State Transformer-inspired fusion gates with dynamic routing, per-branch statistics, and adaptive specialization for robust local-global task blending.",
-    "parameters": "468.47M"
+    "parameters": "468.47M",
+    "score": 2.563206945856089
   },
   {
     "name": "delta_net_hwggm",
@@ -1047,7 +1116,8 @@
     "parent": 497,
     "name_new": "LocalGlobalBlendNet",
     "summary": "Combines head-wise routing for local tasks with adaptive token-wise global mixing to address path starvation and improve reasoning without added complexity.",
-    "parameters": "416.55M"
+    "parameters": "416.55M",
+    "score": 2.381166858117132
   },
   {
     "name": "delta_net_acmg",
@@ -1062,7 +1132,8 @@
     "parent": 497,
     "name_new": "AdaptiveGateNet",
     "summary": "Combining output-aware gating, learnable sharpness, and confidence-adaptive routing, this model achieves balanced local-global reasoning with precise, context-sensitive path selection and efficient gradient flow.",
-    "parameters": "447.31M"
+    "parameters": "447.31M",
+    "score": 2.1317382338352777
   },
   {
     "name": "delta_net_phsg5",
@@ -1077,7 +1148,8 @@
     "parent": 565,
     "name_new": "PerHeadSimplexRouter",
     "summary": "A multi-scale memory routing model with autonomous per-head gating, strict simplex blending, learnable annealing, and enhanced FIR kernels for balanced local and global reasoning.",
-    "parameters": "414.73M"
+    "parameters": "414.73M",
+    "score": 2.223638002868015
   },
   {
     "name": "delta_net_selm",
@@ -1092,7 +1164,8 @@
     "parent": 364,
     "name_new": "HybridScale-GateNet",
     "summary": "An architecture integrating multi-scale hybrid memory, adaptive gating mechanisms, and runtime statistics to enhance local precision, global reasoning, and efficient sequence modeling under sub-quadratic complexity constraints.",
-    "parameters": "469.68M"
+    "parameters": "469.68M",
+    "score": 2.119267638131481
   },
   {
     "name": "delta_net_ms_resgate",
@@ -1107,7 +1180,8 @@
     "parent": 560,
     "name_new": "ResGate_MS_FusionNet",
     "summary": "This model leverages reserve gating with a guaranteed global path allocation, multi-scale FIR memory, statistic-aware inputs, and efficient causal operations to balance sharp selectivity and long-range reasoning across diverse tasks.",
-    "parameters": "468.23M"
+    "parameters": "468.23M",
+    "score": 2.3628523780728754
   },
   {
     "name": "delta_net_sigf_ptu",
@@ -1122,7 +1196,8 @@
     "parent": 1544,
     "name_new": "GateFusionNet",
     "summary": "GateFusionNet integrates rich statistical gate inputs, dynamic gated identity paths, annealed probability floors, and progressive temperature untying to enhance extraction, reasoning, and stability while retaining efficient O(N·d) computations.",
-    "parameters": "472.76M"
+    "parameters": "472.76M",
+    "score": 2.564891989491199
   },
   {
     "name": "delta_net_erfg",
@@ -1137,7 +1212,8 @@
     "parent": 649,
     "name_new": "EntropyFlowGateNet",
     "summary": "A scalable architecture with entropy-regularised routing, adaptive forget scheduling, and dual FIR branches to enhance path diversity, global context retention, and structured task performance under strict O(N) complexity.",
-    "parameters": "489.71M"
+    "parameters": "489.71M",
+    "score": 2.2414524904139093
   },
   {
     "name": "delta_net_acfg",
@@ -1152,7 +1228,8 @@
     "parent": 671,
     "name_new": "AdaptiveFloorGate",
     "summary": "AdaptiveFloorGate dynamically balances copy precision and contextual reasoning by learning token-specific probability floors, preserving gradient flow and stabilizing outputs with post-fusion RMSNorm.",
-    "parameters": "464.74M"
+    "parameters": "464.74M",
+    "score": 2.2845016087520635
   },
   {
     "name": "delta_net_crdg",
@@ -1167,7 +1244,8 @@
     "parent": 565,
     "name_new": "ResConvGate",
     "summary": "ResConvGate introduces residual convolutional paths and stochastic path dropout to ensure gradient flow and prevent gate collapse, enhancing both local and global reasoning while maintaining efficient O(N) complexity.",
-    "parameters": "439.13M"
+    "parameters": "439.13M",
+    "score": 2.396768402421852
   },
   {
     "name": "delta_net_hsigctx",
@@ -1182,7 +1260,8 @@
     "parent": 730,
     "name_new": "DualStagePathGateNet",
     "summary": "A token-wise, head-specific gating model that separates identity routing from contextual path allocation via two-stage gates, ensuring stable optimisation, specialised multi-path reasoning, and linear efficiency.",
-    "parameters": "413.67M"
+    "parameters": "413.67M",
+    "score": 2.4413182171728547
   },
   {
     "name": "delta_net_hmgapf",
@@ -1197,7 +1276,8 @@
     "parent": 682,
     "name_new": "FusionGate-XL",
     "summary": "FusionGate-XL combines parallel additive fusion, adaptive per-head gating, and stabilized softmax routing to ensure robust path activation, efficient global-local reasoning, and resilient optimization across diverse sequence modeling tasks.",
-    "parameters": "433.80M"
+    "parameters": "433.80M",
+    "score": 2.3478368307453534
   },
   {
     "name": "delta_net_hwg",
@@ -1212,7 +1292,8 @@
     "parent": 403,
     "name_new": "HeadWiseGateNet",
     "summary": "Introduces head-wise, output-aware gating with independent path probabilities per head to restore gradient flow, enhance specialisation, and ensure stable branch diversity for improved reasoning tasks.",
-    "parameters": "413.67M"
+    "parameters": "413.67M",
+    "score": 2.5572863948927256
   },
   {
     "name": "delta_net_ssg_sparsemax_temp",
@@ -1227,7 +1308,8 @@
     "parent": 401,
     "name_new": "SparseGateDelta",
     "summary": "SparseGateDelta introduces a temperature-controlled sparsemax gating mechanism to enable selective path activation for improved local-precision reasoning and adaptive sparsity in multi-scale memory tasks.",
-    "parameters": "425.33M"
+    "parameters": "425.33M",
+    "score": 2.3546991262639367
   },
   {
     "name": "delta_net_htcg",
@@ -1242,7 +1324,8 @@
     "parent": 403,
     "name_new": "AdaptiveHierGateNet",
     "summary": "A hierarchical gating model with learnable temperature control that dynamically balances global and local reasoning, addressing precision-recall trade-offs with adaptive entropy tuning.",
-    "parameters": "413.38M"
+    "parameters": "413.38M",
+    "score": 1.9568617098392718
   },
   {
     "name": "delta_net_cagf_br",
@@ -1257,7 +1340,8 @@
     "parent": 671,
     "name_new": "GateFlooredResNet",
     "summary": "A lightweight residual model with probability-floored gating and dynamic path scaling to control variance and stabilize feature norms without additional compute or parameters.",
-    "parameters": "439.13M"
+    "parameters": "439.13M",
+    "score": 2.7247497854337794
   },
   {
     "name": "delta_net_msfr_mn",
@@ -1272,7 +1356,8 @@
     "parent": 965,
     "name_new": "FusionFeedback-MixNormNet",
     "summary": "A research-driven, multi-scale feedback-routed model with adaptive memory, relational routing, and minimalist MixNorm stabilization for efficient, scalable, and robust multi-context reasoning and extraction.",
-    "parameters": "476.31M"
+    "parameters": "476.31M",
+    "score": 2.4105799963989067
   },
   {
     "name": "delta_net_ser_minfloor",
@@ -1287,7 +1372,8 @@
     "parent": 556,
     "name_new": "StatGateRouter",
     "summary": "A routing framework combining enriched statistical inputs, minimum-floor gating, and identity bypass to ensure stable path diversity and improved reasoning across tasks.",
-    "parameters": "471.51M"
+    "parameters": "471.51M",
+    "score": 2.22374935107744
   },
   {
     "name": "delta_net_dyn_gate_mix",
@@ -1302,7 +1388,8 @@
     "parent": 137,
     "name_new": "DynamicMemGateNet",
     "summary": "A sub-quadratic neural architecture with dynamic per-token, per-head gating that adaptively blends associative and long-context memory pathways for enhanced precision, context integration, and task-specific flexibility.",
-    "parameters": "412.15M"
+    "parameters": "412.15M",
+    "score": 2.262065781120045
   },
   {
     "name": "delta_net_annealed_eklf",
@@ -1317,7 +1404,8 @@
     "parent": 908,
     "name_new": "AnnealedPathFusionNet",
     "summary": "Combines annealed regularisation, bounded temperature floors, and structural hard floors to ensure balanced path diversity and specialisation for selective inference and blended reasoning tasks.",
-    "parameters": "442.55M"
+    "parameters": "442.55M",
+    "score": 2.1498436554682687
   },
   {
     "name": "delta_net_pfr",
@@ -1332,7 +1420,8 @@
     "parent": 865,
     "name_new": "LexiFuse-Percept",
     "summary": "Integrates a persistent local-floor probability schedule and per-head residual control to enhance lexical detail preservation and adaptive local-global feature balancing without added computational overhead.",
-    "parameters": "439.13M"
+    "parameters": "439.13M",
+    "score": 2.669621689223796
   },
   {
     "name": "delta_net_hefth",
@@ -1347,7 +1436,8 @@
     "parent": 580,
     "name_new": "FusionGate-X",
     "summary": "FusionGate-X addresses gate-collapse, local-context swamp, and head isolation with ε-floor scheduling, length-adaptive dampening, and talking-heads mixing for enhanced global reasoning and narrative task performance.",
-    "parameters": "471.70M"
+    "parameters": "471.70M",
+    "score": 2.2217666349016474
   },
   {
     "name": "delta_net_ddfsanr",
@@ -1362,7 +1452,8 @@
     "parent": 1544,
     "name_new": "FusionGate-XL",
     "summary": "FusionGate-XL integrates dynamic residual gating, progressive specialization, and enriched path statistics to enable robust local reasoning and global extraction with efficient, sub-quadratic computation and balanced evidence integration.",
-    "parameters": "451.84M"
+    "parameters": "451.84M",
+    "score": 2.1084558390095016
   },
   {
     "name": "delta_net_dyn_decay_fractal_gate",
@@ -1377,7 +1468,8 @@
     "parent": 238,
     "name_new": "AdaptiveFractalGateNet",
     "summary": "Combining adaptive decay gating and gated fractal mixing, this model balances late-context retention and global-local reasoning precision with sub-quadratic complexity.",
-    "parameters": "412.20M"
+    "parameters": "412.20M",
+    "score": 2.1079411427829835
   },
   {
     "name": "delta_net_efagm",
@@ -1392,7 +1484,8 @@
     "parent": 864,
     "name_new": "AdaptiveEntropyGateNet",
     "summary": "A dynamic model integrating entropy-floored adaptive routing, feedback-rich gating, and learnable identity streams to enhance path diversity, task precision, and efficiency across diverse contexts and batch sizes.",
-    "parameters": "496.59M"
+    "parameters": "496.59M",
+    "score": 2.2336832444323176
   },
   {
     "name": "delta_net_triscale",
@@ -1407,7 +1500,8 @@
     "parent": 865,
     "name_new": "TriScaleFusionNet",
     "summary": "Incorporates tri-scale FIR convolutional memory, a 5-way content-aware fusion gate, and persistent locality with per-head residual modulation to enhance mid-range comprehension while preserving global reasoning and gradient flow.",
-    "parameters": "439.62M"
+    "parameters": "439.62M",
+    "score": 2.5772453216012163
   },
   {
     "name": "delta_net_bias_init_mix_gate",
@@ -1422,7 +1516,8 @@
     "parent": 151,
     "name_new": "BAMG_MemoryGate",
     "summary": "The model introduces a Bias-Initialised Adaptive Mixing Gate (BAMG) with a learnable bias initialized to −1.0, ensuring stable early memory utilization for improved long-range reasoning without altering computational complexity or compatibility.",
-    "parameters": "411.95M"
+    "parameters": "411.95M",
+    "score": 2.0173448009491395
   },
   {
     "name": "delta_net_ndg",
@@ -1437,7 +1532,8 @@
     "parent": 302,
     "name_new": "DualScaleGateNet",
     "summary": "A dual-scale gated recurrent model with triple-softmax normalization and gated state updates enabling stable, data-driven integration of local and global context for long-range reasoning tasks.",
-    "parameters": "412.34M"
+    "parameters": "412.34M",
+    "score": 2.1130219785730633
   },
   {
     "name": "delta_net_entropy_cagf_rc_norm",
@@ -1452,7 +1548,8 @@
     "parent": 671,
     "name_new": "EntropyFusionNormX",
     "summary": "A robust multi-path architecture with explicit gate entropy regularization, adaptive residual scaling, and token-level RMSNorm, optimizing path diversity and stability for precision and reasoning tasks.",
-    "parameters": "451.83M"
+    "parameters": "451.83M",
+    "score": 2.382574929900649
   },
   {
     "name": "delta_net_adaptive_mix_gate",
@@ -1467,7 +1564,8 @@
     "parent": 1,
     "name_new": "AdaptiveMixTransformer",
     "summary": "Integrates a dynamic gating mechanism to selectively combine recurrent updates and direct token features, enhancing length extrapolation, task versatility, and stability with minimal computational overhead.",
-    "parameters": "411.95M"
+    "parameters": "411.95M",
+    "score": 2.0779740962112943
   },
   {
     "name": "delta_net_dual_path_fusion",
@@ -1482,7 +1580,8 @@
     "parent": 268,
     "name_new": "FusionConv-AMG",
     "summary": "FusionConv-AMG integrates additive dilated-convolution with adaptive mixing gates to enhance local-global reasoning while maintaining causal, sub-quadratic efficiency.",
-    "parameters": "437.21M"
+    "parameters": "437.21M",
+    "score": 2.290910811476138
   },
   {
     "name": "delta_net_htgmsm",
@@ -1497,7 +1596,8 @@
     "parent": 403,
     "name_new": "HierGate-MEM",
     "summary": "A hierarchical two-stage gating model with dual-scale EMA and learnable bias initialization, enabling efficient task-adaptive routing for balanced local precision and global reasoning in O(N) complexity.",
-    "parameters": "425.33M"
+    "parameters": "425.33M",
+    "score": 2.517634222499238
   },
   {
     "name": "delta_net_sparsemax_temperature",
@@ -1512,7 +1612,8 @@
     "parent": 401,
     "name_new": "SparseTempGateNet",
     "summary": "A multi-scale gating model with sparsemax activation and per-head learnable temperature, enabling sharp, adaptive routing for precision tasks without additional computational overhead.",
-    "parameters": "425.33M"
+    "parameters": "425.33M",
+    "score": 2.2203932015400234
   },
   {
     "name": "delta_net_ahic",
@@ -1527,7 +1628,8 @@
     "parent": 1409,
     "name_new": "AdaptiveContextFusionNet",
     "summary": "Combines adaptive identity-context routing, bounded scaling, annealed entropy regularization, and efficient einops-based implementation to optimize schema extraction and global reasoning with robust fallback mechanisms.",
-    "parameters": "466.71M"
+    "parameters": "466.71M",
+    "score": 2.1153684898720098
   },
   {
     "name": "delta_net_head_gate_ema",
@@ -1542,7 +1644,8 @@
     "parent": 137,
     "name_new": "AdaptiveTokenGate",
     "summary": "Introduces per-head and per-token mixing gates for fine-grained fusion of fast and slow memory paths, improving precision-critical reasoning and long-context tasks with minimal overhead.",
-    "parameters": "412.15M"
+    "parameters": "412.15M",
+    "score": 2.1268656548120513
   },
   {
     "name": "delta_net_hhgass",
@@ -1557,7 +1660,8 @@
     "parent": 1393,
     "name_new": "HybridGateTransformer",
     "summary": "A scalable architecture with hierarchical gating, adaptive scheduling, and dynamic path selection, enabling precise routing, robust memory handling, and balanced optimization for complex reasoning tasks.",
-    "parameters": "464.71M"
+    "parameters": "464.71M",
+    "score": 2.373085985560122
   },
   {
     "name": "delta_net_hsgm",
@@ -1572,7 +1676,8 @@
     "parent": 522,
     "name_new": "HybridSparseGateMemoryNet",
     "summary": "A hybrid sparse gated memory model using temperature-controlled Sparsemax for precise path selection, dual FIR branches for local context, and mild biasing to balance gradient flow and stability.",
-    "parameters": "425.58M"
+    "parameters": "425.58M",
+    "score": 2.5802720887344472
   },
   {
     "name": "delta_net_spectral_fusion",
@@ -1587,6 +1692,7 @@
     "parent": 649,
     "name_new": "SpectralContextMixer",
     "summary": "Utilizes frequency-domain spectral memory with analytic power-law filters via FFT for efficient causal context mixing without hierarchical gating or softmax mechanisms.",
-    "parameters": "411.83M"
+    "parameters": "411.83M",
+    "score": 0.9245959932976544
   }
 ]

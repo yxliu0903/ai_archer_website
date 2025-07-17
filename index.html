@@ -1203,6 +1203,39 @@
             font-size: 14px;
             color: #6b7280;
         }
+
+        /* Sort controls */
+        .sort-controls {
+            margin-bottom: 24px;
+        }
+
+        .sort-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .sort-btn {
+            padding: 8px 16px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            color: #374151;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sort-btn:hover {
+            background: #f3f4f6;
+            border-color: #d1d5db;
+        }
+
+        .sort-btn.active {
+            background: #c8997c;
+            border-color: #c8997c;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -1302,6 +1335,21 @@
                     <input type="text" class="search-input" placeholder="Search neural network names or types..." id="search-input">
                 </div>
 
+                <!-- Sort controls -->
+                <div class="sort-controls">
+                    <div class="sort-buttons">
+                        <button class="sort-btn" id="sort-score-btn" onclick="sortByScore()">
+                            Sort by Score (High to Low)
+                        </button>
+                        <button class="sort-btn" id="sort-params-btn" onclick="sortByParameters()">
+                            Sort by Parameters (Large to Small)
+                        </button>
+                        <button class="sort-btn" id="sort-index-btn" onclick="sortByIndex()">
+                            Sort by Index
+                        </button>
+                    </div>
+                </div>
+
                 <div class="cards-grid" id="cards-container">
                     <!-- Cards will be generated dynamically via JavaScript -->
                 </div>
@@ -1367,6 +1415,7 @@
         let allNetworks = [];
         let filteredNetworks = [];
         let sidebarVisible = true;
+        let currentSortType = 'index'; // 'index', 'score', 'parameters'
         
         // Tree search related variables
         let treeNetworks = [];
@@ -1494,10 +1543,13 @@
                 document.getElementById('loading-page').classList.add('hidden');
                 document.getElementById('directory-page').classList.remove('hidden');
                 
-                // Generate content
-                generateCards();
-                generateIndexList();
-                updateStatistics();
+                            // Generate content
+            generateCards();
+            generateIndexList();
+            updateStatistics();
+            
+            // Initialize sort buttons
+            updateSortButtons();
                 
             } catch (error) {
                 console.error('Failed to load data:', error);
@@ -1562,6 +1614,8 @@
                 });
             }
             
+            // Apply current sort to filtered results
+            applySorting();
             generateCards();
             updateStatistics();
         }
@@ -3202,6 +3256,151 @@
             document.getElementById('colorbar-max').textContent = maxScore.toFixed(3);
         }
 
+        // Apply current sorting to filtered networks
+        function applySorting() {
+            switch (currentSortType) {
+                case 'score':
+                    filteredNetworks.sort((a, b) => {
+                        const scoreA = getNetworkScore(a);
+                        const scoreB = getNetworkScore(b);
+                        return scoreB - scoreA; // High to low
+                    });
+                    break;
+                case 'parameters':
+                    filteredNetworks.sort((a, b) => {
+                        const paramsA = parseParameterCount(a.parameters);
+                        const paramsB = parseParameterCount(b.parameters);
+                        return paramsB - paramsA; // Large to small
+                    });
+                    break;
+                case 'index':
+                default:
+                    filteredNetworks.sort((a, b) => a.index - b.index);
+                    break;
+            }
+        }
+
+        // Sort by score (high to low)
+        function sortByScore() {
+            currentSortType = 'score';
+            updateSortButtons();
+            applySorting();
+            generateCards();
+            generateIndexList();
+        }
+
+        // Sort by parameters (large to small)
+        function sortByParameters() {
+            currentSortType = 'parameters';
+            updateSortButtons();
+            applySorting();
+            generateCards();
+            generateIndexList();
+        }
+
+        // Sort by index (default)
+        function sortByIndex() {
+            currentSortType = 'index';
+            updateSortButtons();
+            applySorting();
+            generateCards();
+            generateIndexList();
+        }
+
+        // Get network score for sorting
+        function getNetworkScore(network) {
+            // Use hardcoded values for specific models
+            if (network.index === 1 && network.name === 'delta_net') {
+                return 0.3799; // DeltaNet baseline average
+            }
+            if (network.name && network.name.includes('gated') && network.name.includes('delta')) {
+                return 0.3896; // Gated DeltaNet baseline average
+            }
+            
+            // For other models, calculate average from test results if available
+            if (network.result && network.result.test) {
+                const testData = parseCSV(network.result.test);
+                if (testData && testData.headers && testData.rows && testData.rows.length > 0) {
+                    // Filter to use only the 7 core tasks
+                    const coreTaskColumns = ['arc_challenge', 'arc_easy', 'boolq', 'hellaswag', 'piqa', 'social_iqa', 'winogrande'];
+                    const validScores = [];
+                    
+                    const firstRow = testData.rows[0];
+                    coreTaskColumns.forEach(task => {
+                        if (testData.headers.includes(task) && firstRow[task]) {
+                            const score = parseFloat(firstRow[task]);
+                            if (!isNaN(score)) {
+                                validScores.push(score);
+                            }
+                        }
+                    });
+                    
+                    if (validScores.length > 0) {
+                        return validScores.reduce((a, b) => a + b, 0) / validScores.length;
+                    }
+                }
+            }
+            
+            // Fallback to existing score field
+            if (network.score !== undefined && network.score !== null) {
+                const score = parseFloat(network.score);
+                if (!isNaN(score)) {
+                    return score;
+                }
+            }
+            
+            return 0; // Default score
+        }
+
+        // Parse parameter count from string
+        function parseParameterCount(paramStr) {
+            if (!paramStr || paramStr === 'N/A') {
+                return 0;
+            }
+            
+            // Handle different formats like "1.2M", "500K", "1.5B", etc.
+            const str = paramStr.toString().toLowerCase().trim();
+            const match = str.match(/([0-9.]+)([kmb]?)/);
+            
+            if (!match) {
+                // Try to parse as direct number
+                const num = parseFloat(str);
+                return isNaN(num) ? 0 : num;
+            }
+            
+            const number = parseFloat(match[1]);
+            const unit = match[2];
+            
+            if (isNaN(number)) {
+                return 0;
+            }
+            
+            switch (unit) {
+                case 'k':
+                    return number * 1000;
+                case 'm':
+                    return number * 1000000;
+                case 'b':
+                    return number * 1000000000;
+                default:
+                    return number;
+            }
+        }
+
+        // Update sort button states
+        function updateSortButtons() {
+            // Remove active class from all buttons
+            document.querySelectorAll('.sort-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to current sort button
+            const activeBtn = document.getElementById(`sort-${currentSortType}-btn`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+        }
+
         // Expose global functions
         window.showDetailPage = showDetailPage;
         window.showDirectory = showDirectory;
@@ -3219,6 +3418,9 @@
         window.downloadTreeAsPNG = downloadTreeAsPNG;
         window.downloadTreeAsSVG = downloadTreeAsSVG;
         window.showFileSelectors = showFileSelectors;
+        window.sortByScore = sortByScore;
+        window.sortByParameters = sortByParameters;
+        window.sortByIndex = sortByIndex;
     </script>
 </body>
 </html> 
