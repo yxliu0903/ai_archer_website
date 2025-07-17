@@ -1834,7 +1834,7 @@
             }
 
             // Define columns to exclude
-            const excludedColumns = ['fda', 'squad_completion', 'swde'];
+            const excludedColumns = ['fda', 'squad_completion', 'swde', 'lambada_openai', 'wikitext'];
 
             // Filter headers to exclude unwanted columns
             const filteredHeaders = testData.headers.filter(header => 
@@ -1869,7 +1869,6 @@
                 'arc_easy': '0.4407',
                 'boolq': '0.5538',
                 'hellaswag': '0.2715',
-                'lambada_openai': '0.0813',
                 'openbookqa': '0.158',
                 'piqa': '0.5871',
                 'social_iqa': '0.3419',
@@ -1884,7 +1883,6 @@
                 'arc_easy': '0.4537',
                 'boolq': '0.5798',
                 'hellaswag': '0.2713',
-                'lambada_openai': '0.0976',
                 'openbookqa': '0.15',
                 'piqa': '0.5968',
                 'social_iqa': '0.3465',
