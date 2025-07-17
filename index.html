@@ -1834,7 +1834,7 @@
             }
 
             // Define columns to exclude
-            const excludedColumns = ['fda', 'squad_completion', 'swde', 'lambada_openai', 'wikitext', 'lam_ppl'];
+            const excludedColumns = ['fda', 'squad_completion', 'swde', 'lambada_openai', 'wikitext', 'lam_ppl', 'openbookqa'];
 
             // Filter headers to exclude unwanted columns
             const filteredHeaders = testData.headers.filter(header => 
@@ -1847,6 +1847,14 @@
                 rows: []
             };
 
+            // Define the 7 core tasks for average calculation
+            const coreTaskColumns = ['arc_challenge', 'arc_easy', 'boolq', 'hellaswag', 'piqa', 'social_iqa', 'winogrande'];
+            
+            // Add Average column to headers if not already present
+            if (!filteredHeaders.includes('Average')) {
+                filteredHeaders.push('Average');
+            }
+
             // Update all rows to use name_new in the first column and filter out excluded columns
             const firstHeader = filteredHeaders[0]; // First column header (usually model name)
             testData.rows.forEach(row => {
@@ -1854,6 +1862,20 @@
                 filteredHeaders.forEach(header => {
                     if (header === firstHeader) {
                         updatedRow[header] = modelName;
+                    } else if (header === 'Average') {
+                        // Calculate average from core tasks
+                        const validScores = [];
+                        coreTaskColumns.forEach(task => {
+                            if (testData.headers.includes(task) && row[task]) {
+                                const score = parseFloat(row[task]);
+                                if (!isNaN(score)) {
+                                    validScores.push(score);
+                                }
+                            }
+                        });
+                        updatedRow[header] = validScores.length > 0 ? 
+                            (validScores.reduce((a, b) => a + b, 0) / validScores.length).toFixed(4) : 
+                            'N/A';
                     } else {
                         updatedRow[header] = row[header] || '';
                     }
@@ -1869,7 +1891,6 @@
                 'arc_easy': '0.4407',
                 'boolq': '0.5538',
                 'hellaswag': '0.2715',
-                'openbookqa': '0.158',
                 'piqa': '0.5871',
                 'social_iqa': '0.3419',
                 'winogrande': '0.5043'
@@ -1883,7 +1904,6 @@
                 'arc_easy': '0.4537',
                 'boolq': '0.5798',
                 'hellaswag': '0.2713',
-                'openbookqa': '0.15',
                 'piqa': '0.5968',
                 'social_iqa': '0.3465',
                 'winogrande': '0.5083'
@@ -1895,6 +1915,34 @@
             );
 
             if (hasBaselineColumns) {
+                // Calculate Average for deltanet baseline
+                const deltanetValidScores = [];
+                coreTaskColumns.forEach(task => {
+                    if (deltanetTestScores[task]) {
+                        const score = parseFloat(deltanetTestScores[task]);
+                        if (!isNaN(score)) {
+                            deltanetValidScores.push(score);
+                        }
+                    }
+                });
+                deltanetTestScores['Average'] = deltanetValidScores.length > 0 ? 
+                    (deltanetValidScores.reduce((a, b) => a + b, 0) / deltanetValidScores.length).toFixed(4) : 
+                    'N/A';
+
+                // Calculate Average for gated deltanet baseline
+                const gatedDeltanetValidScores = [];
+                coreTaskColumns.forEach(task => {
+                    if (gatedDeltanetTestScores[task]) {
+                        const score = parseFloat(gatedDeltanetTestScores[task]);
+                        if (!isNaN(score)) {
+                            gatedDeltanetValidScores.push(score);
+                        }
+                    }
+                });
+                gatedDeltanetTestScores['Average'] = gatedDeltanetValidScores.length > 0 ? 
+                    (gatedDeltanetValidScores.reduce((a, b) => a + b, 0) / gatedDeltanetValidScores.length).toFixed(4) : 
+                    'N/A';
+
                 // Insert deltanet and gated deltanet as second and third rows
                 updatedTestData.rows.splice(1, 0, deltanetTestScores);
                 updatedTestData.rows.splice(2, 0, gatedDeltanetTestScores);
@@ -2125,19 +2173,46 @@
         function updateTreeStatistics() {
             const totalNodes = treeNetworks.length;
             
-            // Get score data
+            // Get score data with updated calculation for specific models
             const scores = treeNetworks.map(n => {
+                // Use hardcoded values for DeltaNet and Gated DeltaNet
+                if (n.index === 1 && n.name === 'delta_net') {
+                    return 0.3799; // DeltaNet baseline average
+                }
+                // Look for Gated DeltaNet - need to find its index in the data
+                if (n.name && n.name.includes('gated') && n.name.includes('delta')) {
+                    return 0.3896; // Gated DeltaNet baseline average
+                }
+                
+                // For other models, calculate average from test results if available
+                if (n.result && n.result.test) {
+                    const testData = parseCSV(n.result.test);
+                    if (testData && testData.headers && testData.rows && testData.rows.length > 0) {
+                        // Filter to use only the 7 core tasks
+                        const coreTaskColumns = ['arc_challenge', 'arc_easy', 'boolq', 'hellaswag', 'openbookqa', 'piqa', 'social_iqa', 'winogrande'];
+                        const validScores = [];
+                        
+                        const firstRow = testData.rows[0]; // Use first row data
+                        coreTaskColumns.forEach(task => {
+                            if (testData.headers.includes(task) && firstRow[task]) {
+                                const score = parseFloat(firstRow[task]);
+                                if (!isNaN(score)) {
+                                    validScores.push(score);
+                                }
+                            }
+                        });
+                        
+                        if (validScores.length > 0) {
+                            return validScores.reduce((a, b) => a + b, 0) / validScores.length;
+                        }
+                    }
+                }
+                
+                // Fallback to existing score field
                 if (n.score !== undefined && n.score !== null) {
                     return parseFloat(n.score);
                 }
-                // Compatibility with old format
-                if (n.result && n.result.test) {
-                    const testLines = n.result.test.split('\n');
-                    if (testLines.length > 1) {
-                        const values = testLines[1].split(',');
-                        return values.length > 1 ? parseFloat(values[1]) : 0;
-                    }
-                }
+                
                 return 0;
             }).filter(s => !isNaN(s));
             
@@ -2308,23 +2383,48 @@
                 .attr('r', 12)
                 .style('fill', d => {
                     const data = d.data;
+                    
+                    // Use hardcoded values for DeltaNet and Gated DeltaNet
+                    if (data.index === 1 && data.name === 'delta_net') {
+                        return treeColorScale(0.3799);
+                    }
+                    if (data.name && data.name.includes('gated') && data.name.includes('delta')) {
+                        return treeColorScale(0.3896);
+                    }
+                    
+                    // For other models, calculate average from test results if available
+                    if (data.result && data.result.test) {
+                        const testData = parseCSV(data.result.test);
+                        if (testData && testData.headers && testData.rows && testData.rows.length > 0) {
+                            // Filter to use only the 7 core tasks
+                            const coreTaskColumns = ['arc_challenge', 'arc_easy', 'boolq', 'hellaswag', 'openbookqa', 'piqa', 'social_iqa', 'winogrande'];
+                            const validScores = [];
+                            
+                            const firstRow = testData.rows[0];
+                            coreTaskColumns.forEach(task => {
+                                if (testData.headers.includes(task) && firstRow[task]) {
+                                    const score = parseFloat(firstRow[task]);
+                                    if (!isNaN(score)) {
+                                        validScores.push(score);
+                                    }
+                                }
+                            });
+                            
+                            if (validScores.length > 0) {
+                                const avgScore = validScores.reduce((a, b) => a + b, 0) / validScores.length;
+                                return treeColorScale(avgScore);
+                            }
+                        }
+                    }
+                    
+                    // Fallback to existing score field
                     if (data.score !== undefined && data.score !== null) {
                         const score = parseFloat(data.score);
                         if (!isNaN(score)) {
                             return treeColorScale(score);
                         }
                     }
-                    // Compatibility with old format
-                    if (data.result && data.result.test) {
-                        const testLines = data.result.test.split('\n');
-                        if (testLines.length > 1) {
-                            const values = testLines[1].split(',');
-                            const score = values.length > 1 ? parseFloat(values[1]) : 0;
-                            if (!isNaN(score)) {
-                                return treeColorScale(score);
-                            }
-                        }
-                    }
+                    
                     return '#666';
                 })
                 .style('stroke', 'none')
