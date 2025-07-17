@@ -1757,21 +1757,21 @@
 
         // Create enhanced training data with deltanet and gated deltanet comparison
         function createEnhancedTrainingData(originalTrainData, modelName) {
-            // deltanet loss data (extracted from log file, starting from step 600)
-            const deltanetLosses = [4.8421, 4.5947, 4.3772, 4.2155, 4.0338, 3.9330, 3.8148, 3.7576, 3.7160, 3.6412, 3.5928, 3.5765, 3.5381, 3.4951, 3.5055];
+            // deltanet loss data (extracted from log file, starting from step 500)
+            const deltanetLosses = [5.1532, 4.8421, 4.5947, 4.3772, 4.2155, 4.0338, 3.9330, 3.8148, 3.7576, 3.7160, 3.6412, 3.5928, 3.5765, 3.5381, 3.4951, 3.5055];
 
-            // gated deltanet loss data (extracted from log file, starting from step 600)
-            const gatedDeltanetLosses = [4.5393, 4.3642, 4.2144, 4.0949, 3.9439, 3.8624, 3.7586, 3.7010, 3.6672, 3.6003, 3.5528, 3.5397, 3.5045, 3.4690, 3.4768];
+            // gated deltanet loss data (extracted from log file, starting from step 500)
+            const gatedDeltanetLosses = [4.7908, 4.5393, 4.3642, 4.2144, 4.0949, 3.9439, 3.8624, 3.7586, 3.7010, 3.6672, 3.6003, 3.5528, 3.5397, 3.5045, 3.4690, 3.4768];
 
             // If no original training data, return original structure with comparison rows
             if (!originalTrainData || !originalTrainData.rows || originalTrainData.rows.length === 0) {
                 return originalTrainData;
             }
 
-            // Create enhanced data structure based on original data, but skip early columns (1-500)
-            const startColumnIndex = 6; // Skip columns 1, 100, 200, 300, 400, 500 (start from 600)
+            // Create enhanced data structure based on original data, but skip early columns (1-400)
+            const startColumnIndex = 5; // Skip columns 1, 100, 200, 300, 400 (start from 500)
             const filteredHeaders = originalTrainData.headers.filter((header, index) => {
-                return index === 0 || index >= startColumnIndex; // Keep first column (model name) and columns from index 6+
+                return index === 0 || index >= startColumnIndex; // Keep first column (model name) and columns from index 5+
             });
             
             const enhancedData = {
