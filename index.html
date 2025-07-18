@@ -1650,33 +1650,10 @@
 
         // Setup event listeners
         function setupEventListeners() {
-            const searchInput = document.getElementById('search-input');
-            searchInput.addEventListener('input', handleSearch);
+            // Search input has been removed, no event listeners needed
         }
 
-        // Search handling
-        function handleSearch(event) {
-            const query = event.target.value.toLowerCase().trim();
-            
-            if (query === '') {
-                filteredNetworks = [...allNetworks];
-            } else {
-                filteredNetworks = allNetworks.filter(network => {
-                    const name = network.name_new || network.name || '';
-                    const summary = network.summary || network.motivation || '';
-                    const index = network.index.toString();
-                    
-                    return name.toLowerCase().includes(query) ||
-                           summary.toLowerCase().includes(query) ||
-                           index.includes(query);
-                });
-            }
-            
-            // Apply current sort to filtered results
-            applySorting();
-            generateCards();
-            updateStatistics();
-        }
+        // Search functionality removed - keeping all networks visible
 
         // Update statistics
         function updateStatistics() {
