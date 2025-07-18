@@ -1036,8 +1036,8 @@
 
         .colorbar-container {
             position: absolute;
-            top: 80px;
-            left: 80px;
+            top: 150px;
+            left: 150px;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.9);
             padding: 16px;
@@ -1341,6 +1341,7 @@
                             </ul>
                         </li>
                         <li><a class="index-item" onclick="showTreeSearch()">Tree Search</a></li>
+                        <li><a class="index-item" onclick="showStatistics()">Statistics</a></li>
                         <li><a class="index-item" onclick="showAbout()">About Project</a></li>
                     </ul>
                 </div>
@@ -1704,6 +1705,7 @@
                 
                 link.innerHTML = `
                     <span class="index-number">#${item.index}</span>
+                    <span class="index-parameters">${parameters}</span>
                     <span class="index-name">${displayName}</span>
                 `;
                 
@@ -2520,29 +2522,16 @@
             // Create color bar
             createColorbar(minScore, maxScore);
             
-            // Draw connection lines with orthogonal (elbow) style
+            // Draw connection lines
             const links = root.links();
-            
-            // Custom orthogonal link path generator
-            function orthogonalLink(d) {
-                const source = d.source;
-                const target = d.target;
-                
-                // Calculate midpoint for the elbow
-                const midY = source.y + (target.y - source.y) / 2;
-                
-                return `M${source.x},${source.y}
-                        L${source.x},${midY}
-                        L${target.x},${midY}
-                        L${target.x},${target.y}`;
-            }
-            
             g.selectAll('.tree-link')
                 .data(links)
                 .enter()
                 .append('path')
                 .attr('class', 'tree-link')
-                .attr('d', orthogonalLink)
+                .attr('d', d3.linkVertical()
+                    .x(d => d.x)
+                    .y(d => d.y))
                 .style('fill', 'none')
                 .style('stroke', '#d1d5db')
                 .style('stroke-width', 1.5);
@@ -3218,10 +3207,10 @@
             backgroundRect.setAttribute('fill', '#ffffff');
             svgClone.insertBefore(backgroundRect, svgClone.firstChild);
             
-                                      // Add color bar to SVG (top left, closer to corner)
+                                      // Add color bar to SVG (top left, move further right and down)
              const colorbarGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-             const colorbarX = bbox.x - padding + 30; // Move closer to left edge
-             const colorbarY = bbox.y - padding + 30; // Move closer to top edge
+             const colorbarX = bbox.x - padding + 100; // Move right by 80px from original
+             const colorbarY = bbox.y - padding + 100; // Move down by 80px from original
              colorbarGroup.setAttribute('transform', `translate(${colorbarX}, ${colorbarY})`);
             
                          // Color bar background

@@ -1,0 +1,22 @@
+{
+  "name": "neural-network-research-gallery",
+  "version": "1.0.0",
+  "description": "神经网络研究数据展示网站 - 本地部署版本",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "neural-network",
+    "research",
+    "gallery",
+    "visualization",
+    "machine-learning"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  }
+} 

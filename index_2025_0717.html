@@ -318,147 +318,120 @@
             color: #ef4444;
         }
 
-        /* Models table */
-        .models-table {
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #e5e7eb;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
             margin-bottom: 40px;
         }
 
-        .models-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .models-table thead {
-            background: linear-gradient(135deg, #c8997c, #b5845b);
-            color: white;
-        }
-
-        .models-table th {
-            padding: 16px 20px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 14px;
-            position: relative;
-        }
-
-        .models-table th:first-child {
-            width: 20%;
-        }
-
-        .models-table th:nth-child(2) {
-            width: 10%;
-        }
-
-        .models-table th:nth-child(3) {
-            width: 35%;
-        }
-
-        .models-table th:nth-child(4) {
-            width: 20%;
-        }
-
-        .models-table th:nth-child(5) {
-            width: 15%;
-        }
-
-        .models-table tbody tr {
-            border-bottom: 1px solid #f3f4f6;
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
             transition: all 0.2s ease;
             cursor: pointer;
         }
 
-        .models-table tbody tr:hover {
-            background: #f9fafb;
-            transform: scale(1.001);
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-1px);
         }
 
-        .models-table td {
-            padding: 16px 20px;
-            vertical-align: top;
-            font-size: 14px;
-        }
-
-        .model-name {
-            font-weight: 600;
-            color: #111827;
-            margin-bottom: 4px;
-        }
-
-        .model-index {
-            font-size: 12px;
-            color: #6b7280;
-            font-family: 'Monaco', monospace;
-        }
-
-        .model-parameters {
-            background: #e0f7fa;
-            color: #00695c;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-family: 'Monaco', monospace;
-            border: 1px solid #4db6ac;
-            display: inline-block;
-        }
-
-        .model-summary {
-            color: #374151;
-            line-height: 1.5;
-            max-height: 60px;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-        }
-
-        .model-architecture {
-            max-width: 200px;
-            max-height: 80px;
-            overflow: hidden;
-            border: 1px solid #e5e7eb;
-            border-radius: 4px;
-            background: #fafafa;
+        .card-image {
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
         }
 
-        .model-architecture svg {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+        .card-image.style-1 {
+            background: linear-gradient(135deg, #c8997c 0%, #b5845b 100%);
         }
 
-        .architecture-placeholder {
-            color: #9ca3af;
-            font-size: 12px;
-            text-align: center;
+        .card-image.style-2 {
+            background: linear-gradient(135deg, #d4d4d8 0%, #a1a1aa 100%);
+        }
+
+        .card-image.style-3 {
+            background: linear-gradient(135deg, #e6ddd4 0%, #d6cc9a 100%);
+        }
+
+        .card-image.style-4 {
+            background: linear-gradient(135deg, #f0f9ff 0%, #dbeafe 100%);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #374151;
+        }
+
+        .card-content {
             padding: 20px;
         }
 
-        .model-score {
+        .card-meta {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .card-name {
+            font-size: 16px;
             font-weight: 600;
             color: #111827;
+            margin-bottom: 6px;
+        }
+
+        .card-info {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+            align-items: center;
+        }
+
+        .card-index {
+            display: inline-block;
+            background: #f3f4f6;
+            color: #6b7280;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
             font-family: 'Monaco', monospace;
-            font-size: 14px;
         }
 
-        .score-high {
-            color: #059669;
+        .card-parameters {
+            display: inline-block;
+            background: #e0f7fa;
+            color: #00695c;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-family: 'Monaco', monospace;
+            border: 1px solid #4db6ac;
         }
 
-        .score-medium {
-            color: #d97706;
-        }
-
-        .score-low {
-            color: #dc2626;
+        .card-description {
+            color: #6b7280;
+            font-size: 13px;
+            line-height: 1.5;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
 
         /* Detail page */
@@ -1036,8 +1009,8 @@
 
         .colorbar-container {
             position: absolute;
-            top: 80px;
-            left: 80px;
+            top: 150px;
+            left: 150px;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.9);
             padding: 16px;
@@ -1165,29 +1138,8 @@
                 font-size: 32px;
             }
 
-            .models-table {
-                overflow-x: auto;
-            }
-
-            .models-table th,
-            .models-table td {
-                padding: 12px 8px;
-                font-size: 12px;
-            }
-
-            .models-table th:nth-child(3),
-            .models-table td:nth-child(3) {
-                min-width: 200px;
-            }
-
-            .models-table th:nth-child(4),
-            .models-table td:nth-child(4) {
-                min-width: 150px;
-            }
-
-            .model-architecture {
-                max-width: 120px;
-                max-height: 60px;
+            .cards-grid {
+                grid-template-columns: 1fr;
             }
 
             .tables-container {
@@ -1341,6 +1293,7 @@
                             </ul>
                         </li>
                         <li><a class="index-item" onclick="showTreeSearch()">Tree Search</a></li>
+                        <li><a class="index-item" onclick="showStatistics()">Statistics</a></li>
                         <li><a class="index-item" onclick="showAbout()">About Project</a></li>
                     </ul>
                 </div>
@@ -1397,21 +1350,8 @@
                     </div>
                 </div>
 
-                <div class="models-table" id="models-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Model Name</th>
-                                <th>Parameters</th>
-                                <th>Summary</th>
-                                <th>Architecture</th>
-                                <th>Score</th>
-                            </tr>
-                        </thead>
-                        <tbody id="models-tbody">
-                            <!-- Table rows will be generated dynamically via JavaScript -->
-                        </tbody>
-                    </table>
+                <div class="cards-grid" id="cards-container">
+                    <!-- Cards will be generated dynamically via JavaScript -->
                 </div>
             </div>
 
@@ -1518,7 +1458,7 @@
                 
                 // Process loaded data
                 loadDataFromObject(allData);
-                loadTreeDataFromObject(treeDataRaw, false); // Don't auto-show during initial load
+                loadTreeDataFromObject(treeDataRaw);
                 
             } catch (error) {
                 console.error('Failed to load data files:', error);
@@ -1576,7 +1516,7 @@
             reader.onload = function(e) {
                 try {
                     const data = JSON.parse(e.target.result);
-                    loadTreeDataFromObject(data, true); // Auto-show when user manually selects file
+                    loadTreeDataFromObject(data);
                 } catch (error) {
                     console.error('Failed to parse tree search JSON file:', error);
                     statusElement.textContent = 'File format error, please select a valid JSON file';
@@ -1619,7 +1559,7 @@
         }
 
         // Load tree search data from object
-        function loadTreeDataFromObject(data, autoShow = false) {
+        function loadTreeDataFromObject(data) {
             try {
                 // Check data format
                 if (data.results && Array.isArray(data.results)) {
@@ -1638,12 +1578,11 @@
                 const treeFileLoader = document.getElementById('tree-file-loader');
                 treeFileLoader.classList.add('hidden');
                 
-                // Only show tree search page if explicitly requested
-                if (autoShow) {
-                    document.getElementById('tree-search-page').classList.remove('hidden');
-                    // Build and render tree
-                    buildAndRenderTree();
-                }
+                // Show tree search page
+                document.getElementById('tree-search-page').classList.remove('hidden');
+                
+                // Build and render tree
+                buildAndRenderTree();
                 
             } catch (error) {
                 console.error('Failed to load tree search data:', error);
@@ -1704,6 +1643,7 @@
                 
                 link.innerHTML = `
                     <span class="index-number">#${item.index}</span>
+                    <span class="index-parameters">${parameters}</span>
                     <span class="index-name">${displayName}</span>
                 `;
                 
@@ -1712,63 +1652,48 @@
             });
         }
 
-        // Generate table rows
+        // Generate cards
         function generateCards() {
-            const tbody = document.getElementById('models-tbody');
-            tbody.innerHTML = '';
+            const container = document.getElementById('cards-container');
+            container.innerHTML = '';
             
             if (filteredNetworks.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: #6b7280; padding: 40px;">No matching networks found</td></tr>';
+                container.innerHTML = '<div style="text-align: center; color: #6b7280; padding: 40px;">No matching networks found</div>';
                 return;
             }
             
+            const styles = ['style-1', 'style-2', 'style-3', 'style-4'];
+            const icons = ['●', '■', '▲', '♦', '★', '◆'];
+            
             filteredNetworks.forEach((item, index) => {
-                const row = document.createElement('tr');
-                row.onclick = () => showDetailPage(item.index);
+                const card = document.createElement('div');
+                card.className = 'card bounce-enter';
+                card.onclick = () => showDetailPage(item.index);
+                
+                const styleClass = styles[index % styles.length];
+                const icon = icons[index % icons.length];
                 
                 const displayName = item.name_new || item.name || 'Unknown Network';
-                const displaySummary = item.summary || item.motivation || 'No description available';
+                const displayDescription = item.summary || item.motivation || 'Click to view details';
                 const parameters = item.parameters || 'N/A';
-                const score = item.score !== undefined && item.score !== null ? parseFloat(item.score) : null;
                 
-                // Determine score class based on value
-                let scoreClass = 'score-low';
-                if (score !== null) {
-                    if (score >= 0.4) {
-                        scoreClass = 'score-high';
-                    } else if (score >= 0.3) {
-                        scoreClass = 'score-medium';
-                    }
-                }
-                
-                // Process architecture diagram
-                let architectureHtml = '';
-                if (item.svg_picture && item.svg_picture.trim()) {
-                    architectureHtml = `<div class="model-architecture">${item.svg_picture}</div>`;
-                } else {
-                    architectureHtml = '<div class="model-architecture"><div class="architecture-placeholder">No diagram</div></div>';
-                }
-                
-                row.innerHTML = `
-                    <td>
-                        <div class="model-name">${displayName}</div>
-                        <div class="model-index">#${item.index}</div>
-                    </td>
-                    <td>
-                        <div class="model-parameters">${parameters}</div>
-                    </td>
-                    <td>
-                        <div class="model-summary">${displaySummary}</div>
-                    </td>
-                    <td>
-                        ${architectureHtml}
-                    </td>
-                    <td>
-                        <div class="model-score ${scoreClass}">${score !== null ? score.toFixed(4) : 'N/A'}</div>
-                    </td>
+                card.innerHTML = `
+                    <div class="card-image ${styleClass}">
+                        <div class="card-icon">${icon}</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-name">${displayName}</div>
+                        <div class="card-info">
+                            <div class="card-index">#${item.index}</div>
+                            <div class="card-parameters">${parameters}</div>
+                        </div>
+                        <div class="card-description">
+                            ${displayDescription.substring(0, 80) + (displayDescription.length > 80 ? '...' : '')}
+                        </div>
+                    </div>
                 `;
                 
-                tbody.appendChild(row);
+                container.appendChild(card);
             });
         }
 
@@ -2245,7 +2170,6 @@
             // Hide other pages
             document.getElementById('directory-page').classList.add('hidden');
             document.getElementById('detail-page').classList.add('hidden');
-            document.getElementById('error-page').classList.add('hidden');
             
             // Check if there is tree search data
             if (treeNetworks.length === 0) {
@@ -2520,29 +2444,16 @@
             // Create color bar
             createColorbar(minScore, maxScore);
             
-            // Draw connection lines with orthogonal (elbow) style
+            // Draw connection lines
             const links = root.links();
-            
-            // Custom orthogonal link path generator
-            function orthogonalLink(d) {
-                const source = d.source;
-                const target = d.target;
-                
-                // Calculate midpoint for the elbow
-                const midY = source.y + (target.y - source.y) / 2;
-                
-                return `M${source.x},${source.y}
-                        L${source.x},${midY}
-                        L${target.x},${midY}
-                        L${target.x},${target.y}`;
-            }
-            
             g.selectAll('.tree-link')
                 .data(links)
                 .enter()
                 .append('path')
                 .attr('class', 'tree-link')
-                .attr('d', orthogonalLink)
+                .attr('d', d3.linkVertical()
+                    .x(d => d.x)
+                    .y(d => d.y))
                 .style('fill', 'none')
                 .style('stroke', '#d1d5db')
                 .style('stroke-width', 1.5);
@@ -3218,10 +3129,10 @@
             backgroundRect.setAttribute('fill', '#ffffff');
             svgClone.insertBefore(backgroundRect, svgClone.firstChild);
             
-                                      // Add color bar to SVG (top left, closer to corner)
+                                      // Add color bar to SVG (top left, move further right and down)
              const colorbarGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-             const colorbarX = bbox.x - padding + 30; // Move closer to left edge
-             const colorbarY = bbox.y - padding + 30; // Move closer to top edge
+             const colorbarX = bbox.x - padding + 100; // Move right by 80px from original
+             const colorbarY = bbox.y - padding + 100; // Move down by 80px from original
              colorbarGroup.setAttribute('transform', `translate(${colorbarX}, ${colorbarY})`);
             
                          // Color bar background
@@ -3354,7 +3265,7 @@
                         return scoreB - scoreA; // High to low
                     });
                     break;
-                case 'params':
+                case 'parameters':
                     filteredNetworks.sort((a, b) => {
                         const paramsA = parseParameterCount(a.parameters);
                         const paramsB = parseParameterCount(b.parameters);
@@ -3379,7 +3290,7 @@
 
         // Sort by parameters (large to small)
         function sortByParameters() {
-            currentSortType = 'params';
+            currentSortType = 'parameters';
             updateSortButtons();
             applySorting();
             generateCards();
@@ -3397,7 +3308,39 @@
 
         // Get network score for sorting
         function getNetworkScore(network) {
-            // Directly use the score field from JSON data
+            // Use hardcoded values for specific models
+            if (network.index === 1 && network.name === 'delta_net') {
+                return 0.3799; // DeltaNet baseline average
+            }
+            if (network.name && network.name.includes('gated') && network.name.includes('delta')) {
+                return 0.3896; // Gated DeltaNet baseline average
+            }
+            
+            // For other models, calculate average from test results if available
+            if (network.result && network.result.test) {
+                const testData = parseCSV(network.result.test);
+                if (testData && testData.headers && testData.rows && testData.rows.length > 0) {
+                    // Filter to use only the 7 core tasks
+                    const coreTaskColumns = ['arc_challenge', 'arc_easy', 'boolq', 'hellaswag', 'piqa', 'social_iqa', 'winogrande'];
+                    const validScores = [];
+                    
+                    const firstRow = testData.rows[0];
+                    coreTaskColumns.forEach(task => {
+                        if (testData.headers.includes(task) && firstRow[task]) {
+                            const score = parseFloat(firstRow[task]);
+                            if (!isNaN(score)) {
+                                validScores.push(score);
+                            }
+                        }
+                    });
+                    
+                    if (validScores.length > 0) {
+                        return validScores.reduce((a, b) => a + b, 0) / validScores.length;
+                    }
+                }
+            }
+            
+            // Fallback to existing score field
             if (network.score !== undefined && network.score !== null) {
                 const score = parseFloat(network.score);
                 if (!isNaN(score)) {
@@ -3405,7 +3348,7 @@
                 }
             }
             
-            return 0; // Default score if no valid score found
+            return 0; // Default score
         }
 
         // Parse parameter count from string
