@@ -1040,8 +1040,8 @@
             left: 80px;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.9);
-            padding: 16px;
-            border-radius: 10px;
+            padding: 12px;
+            border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             border: 1px solid #e5e7eb;
         }
@@ -1061,20 +1061,20 @@
         }
 
         .colorbar {
-            width: 180px;
-            height: 22px;
-            border-radius: 5px;
+            width: 90px;
+            height: 12px;
+            border-radius: 3px;
             border: 1px solid #d1d5db;
         }
 
         .colorbar-labels {
             display: flex;
             justify-content: space-between;
-            width: 180px;
-            font-size: 14px;
+            width: 90px;
+            font-size: 10px;
             color: #374151;
             line-height: 1.2;
-            margin-top: 8px;
+            margin-top: 4px;
             font-weight: 500;
         }
 
@@ -2555,49 +2555,13 @@
                 .attr('r', 12)
                 .style('fill', d => {
                     const data = d.data;
-                    
-                    // Use hardcoded values for DeltaNet and Gated DeltaNet
-                    if (data.index === 1 && data.name === 'delta_net') {
-                        return treeColorScale(0.3799);
-                    }
-                    if (data.name && data.name.includes('gated') && data.name.includes('delta')) {
-                        return treeColorScale(0.3896);
-                    }
-                    
-                    // For other models, calculate average from test results if available
-                    if (data.result && data.result.test) {
-                        const testData = parseCSV(data.result.test);
-                        if (testData && testData.headers && testData.rows && testData.rows.length > 0) {
-                            // Filter to use only the 7 core tasks
-                            const coreTaskColumns = ['arc_challenge', 'arc_easy', 'boolq', 'hellaswag', 'piqa', 'social_iqa', 'winogrande'];
-                            const validScores = [];
-                            
-                            const firstRow = testData.rows[0];
-                            coreTaskColumns.forEach(task => {
-                                if (testData.headers.includes(task) && firstRow[task]) {
-                                    const score = parseFloat(firstRow[task]);
-                                    if (!isNaN(score)) {
-                                        validScores.push(score);
-                                    }
-                                }
-                            });
-                            
-                            if (validScores.length > 0) {
-                                const avgScore = validScores.reduce((a, b) => a + b, 0) / validScores.length;
-                                return treeColorScale(avgScore);
-                            }
-                        }
-                    }
-                    
-                    // Fallback to existing score field
                     if (data.score !== undefined && data.score !== null) {
                         const score = parseFloat(data.score);
                         if (!isNaN(score)) {
                             return treeColorScale(score);
                         }
                     }
-                    
-                    return '#666';
+                    return '#666'; // 默认灰色
                 })
                 .style('stroke', 'none')
                 .style('opacity', 0.9)
@@ -3202,19 +3166,19 @@
              const colorbarBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
              colorbarBg.setAttribute('x', '0');
              colorbarBg.setAttribute('y', '0');
-             colorbarBg.setAttribute('width', '212');
-             colorbarBg.setAttribute('height', '70');
+             colorbarBg.setAttribute('width', '114');
+             colorbarBg.setAttribute('height', '48');
              colorbarBg.setAttribute('fill', 'rgba(255, 255, 255, 0.9)');
              colorbarBg.setAttribute('stroke', '#e5e7eb');
-             colorbarBg.setAttribute('rx', '10');
+             colorbarBg.setAttribute('rx', '6');
              colorbarGroup.appendChild(colorbarBg);
              
              // Color bar title
              const titleText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-             titleText.setAttribute('x', '106');
-             titleText.setAttribute('y', '22');
+             titleText.setAttribute('x', '57');
+             titleText.setAttribute('y', '18');
              titleText.setAttribute('text-anchor', 'middle');
-             titleText.setAttribute('font-size', '16');
+             titleText.setAttribute('font-size', '14');
              titleText.setAttribute('font-weight', '600');
              titleText.setAttribute('fill', '#374151');
              titleText.textContent = colorbarTitle;
@@ -3229,10 +3193,10 @@
             gradient.setAttribute('x2', '100%');
             gradient.setAttribute('y2', '0%');
             
-            // Add gradient colors
+            // Add gradient colors - red for low scores, blue for high scores
             const rdylbuColors = [
-                '#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8',
-                '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026'
+                '#a50026', '#d73027', '#f46d43', '#fdae61', '#fee090',
+                '#ffffbf', '#e0f3f8', '#abd9e9', '#74add1', '#4575b4', '#313695'
             ];
             
             rdylbuColors.forEach((color, index) => {
@@ -3247,30 +3211,30 @@
             
                          // Color bar rectangle
              const colorbarRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-             colorbarRect.setAttribute('x', '16');
-             colorbarRect.setAttribute('y', '34');
-             colorbarRect.setAttribute('width', '180');
-             colorbarRect.setAttribute('height', '22');
+             colorbarRect.setAttribute('x', '12');
+             colorbarRect.setAttribute('y', '26');
+             colorbarRect.setAttribute('width', '90');
+             colorbarRect.setAttribute('height', '12');
              colorbarRect.setAttribute('fill', 'url(#colorbar-gradient)');
              colorbarRect.setAttribute('stroke', '#d1d5db');
-             colorbarRect.setAttribute('rx', '5');
+             colorbarRect.setAttribute('rx', '3');
              colorbarGroup.appendChild(colorbarRect);
              
              // Color bar labels
              const minLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-             minLabel.setAttribute('x', '16');
-             minLabel.setAttribute('y', '70');
-             minLabel.setAttribute('font-size', '14');
+             minLabel.setAttribute('x', '12');
+             minLabel.setAttribute('y', '46');
+             minLabel.setAttribute('font-size', '10');
              minLabel.setAttribute('font-weight', '500');
              minLabel.setAttribute('fill', '#374151');
              minLabel.textContent = colorbarMin;
              colorbarGroup.appendChild(minLabel);
              
              const maxLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-             maxLabel.setAttribute('x', '196');
-             maxLabel.setAttribute('y', '70');
+             maxLabel.setAttribute('x', '102');
+             maxLabel.setAttribute('y', '46');
              maxLabel.setAttribute('text-anchor', 'end');
-             maxLabel.setAttribute('font-size', '14');
+             maxLabel.setAttribute('font-size', '10');
              maxLabel.setAttribute('font-weight', '500');
              maxLabel.setAttribute('fill', '#374151');
              maxLabel.textContent = colorbarMax;
@@ -3295,19 +3259,16 @@
         function createColorbar(minScore, maxScore) {
             const colorbar = document.getElementById('colorbar');
             
-            // Create gradient background
+            // Create gradient background - red for high scores, blue for low scores
             const rdylbuColors = [
                 '#a50026', '#d73027', '#f46d43', '#fdae61', '#fee090',
                 '#ffffbf', '#e0f3f8', '#abd9e9', '#74add1', '#4575b4', '#313695'
             ];
             
-            // Reverse color array to match D3 color scale
-            // D3's RdYlBu scheme: low values (blue) to high values (red)
-            const reversedColors = [...rdylbuColors].reverse();
-            
             // Create horizontal gradient (from low to high scores)
-            const gradientStops = reversedColors.map((color, index) => {
-                const percentage = (index / (reversedColors.length - 1)) * 100;
+            // Left side (low scores) = red, Right side (high scores) = blue
+            const gradientStops = rdylbuColors.map((color, index) => {
+                const percentage = (index / (rdylbuColors.length - 1)) * 100;
                 return `${color} ${percentage}%`;
             }).join(', ');
             

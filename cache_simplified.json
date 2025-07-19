@@ -6,7 +6,7 @@
       "name": "delta_net",
       "parent": null,
       "score": 1.6395007141866111,
-      "name_new": "HouseholderRNN"
+      "name_new": "DeltaNet"
     },
     {
       "index": 2,
