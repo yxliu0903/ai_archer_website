@@ -3158,8 +3158,8 @@
             
                                       // Add color bar to SVG (top left, closer to corner)
              const colorbarGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-             const colorbarX = bbox.x - padding + 30; // Move closer to left edge
-             const colorbarY = bbox.y - padding + 30; // Move closer to top edge
+             const colorbarX = bbox.x - padding + 50; // Move more to the right
+             const colorbarY = bbox.y - padding + 50; // Move more down
              colorbarGroup.setAttribute('transform', `translate(${colorbarX}, ${colorbarY})`);
             
                          // Color bar background
